@@ -177,5 +177,4 @@ module_init ( DHT11_init_module );
 module_exit ( DHT11_exit_module );
 
 MODULE_LICENSE ( "GPL" ) ;
-MODULE_AUTHOR ( "Shihui Jin (CUMT_CS)" ) ;
 
