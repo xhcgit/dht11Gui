@@ -1,4 +1,4 @@
-//数据引脚链接到GPG14
+//数据引脚链接到GPC9
 #include <linux/miscdevice.h>
 #include <linux/delay.h>
 #include <asm/irq.h>
