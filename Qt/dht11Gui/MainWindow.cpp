@@ -9,6 +9,8 @@
 #include <QPixmap>
 #include <QMouseEvent>
 
+//#define linux
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -41,8 +43,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     isSetLimit = false;
 
-    file = new QFile("/dev/dht11");
-    //file = new QFile("test.txt");
+    file = new QFile();
+    file->setFileName("test.txt");
+#ifdef linux
+    file->setFileName("/dev/dht11");
+#endif
+
     timer = new QTimer();
     if(file->open(QFile::ReadOnly))
     {
@@ -88,10 +94,11 @@ void MainWindow::slotTimeOut()
     {
         curHumidity = int(*(buf+0));
         curTemperature = int(*(buf+2));
-
+#ifdef linux
         if(!(((curHumidity >= 20)&&(curHumidity <= 90))&&
              ((curTemperature >= 0)&&(curTemperature <= 50))))
             return;
+#endif
         ui->lcdHumidity->display(curHumidity);
         ui->lcdTemperature->display(curTemperature);
 

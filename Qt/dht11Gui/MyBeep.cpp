@@ -1,6 +1,8 @@
 #include "MyBeep.h"
 #include "ui_MyBeep.h"
 
+//#define linux
+#ifdef linux
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -13,6 +15,7 @@
 #include <sys/stat.h>
 #include <iostream>
 #include <QFile>
+#endif
 
 using namespace std;
 static int beep_fb;
@@ -30,6 +33,7 @@ MyBeep::MyBeep(QWidget *parent) :
     connect(ui->spinBoxBeep, SIGNAL(valueChanged(int)), this, SLOT(setValue(int)));
 
     this->setWindowIcon(QIcon("xd1.png"));
+#ifdef linux
     QFile f("/dev/beep");
     if (f.exists())
     {
@@ -39,22 +43,29 @@ MyBeep::MyBeep(QWidget *parent) :
             perror("open device leds fail");
         }
     }
+#endif
 }
 
 MyBeep::~MyBeep()
 {
     delete ui;
+#ifdef linux
     ::close(beep_fb);
+#endif
 }
 
 void MyBeep::powerBeep()
 {
+#ifdef linux
     ioctl(beep_fb, powerFlag, freqBeep);
+#endif
 }
 
 void MyBeep::closeBeep()
 {
+#ifdef linux
     ioctl(beep_fb, 0, 1);//关闭蜂鸣器
+#endif
 }
 
 void MyBeep::setValue(int value)
