@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QFile>
 #include <QDate>
+#include "systemcontrol.h"
 
 namespace Ui {
 class Average;

@@ -10,6 +10,7 @@
 #include "MyBeep.h"
 #include "Average.h"
 #include "Change.h"
+#include "systemcontrol.h"
 
 
 namespace Ui {

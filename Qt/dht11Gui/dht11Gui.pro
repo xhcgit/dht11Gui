@@ -23,7 +23,8 @@ HEADERS  += MainWindow.h \
     Average.h \
     Change.h \
     Limit.h \
-    MyBeep.h
+    MyBeep.h \
+    SystemControl.h
 
 FORMS    += MainWindow.ui \
     Average.ui \

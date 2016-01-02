@@ -6,6 +6,7 @@
 #include <QVector>
 #include <QDate>
 #include <QMouseEvent>
+#include "systemcontrol.h"
 
 namespace Ui {
 class Change;

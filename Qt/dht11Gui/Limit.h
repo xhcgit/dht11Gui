@@ -2,6 +2,7 @@
 #define LIMIT_H
 
 #include <QWidget>
+#include "systemcontrol.h"
 
 namespace Ui {
 class Limit;

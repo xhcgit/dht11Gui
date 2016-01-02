@@ -9,7 +9,6 @@
 #include <QPixmap>
 #include <QMouseEvent>
 
-//#define linux
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

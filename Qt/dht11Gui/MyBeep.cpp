@@ -1,7 +1,6 @@
 #include "MyBeep.h"
 #include "ui_MyBeep.h"
 
-//#define linux
 #ifdef linux
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,8 +13,8 @@
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <iostream>
-#include <QFile>
 #endif
+#include <QFile>
 
 using namespace std;
 static int beep_fb;
