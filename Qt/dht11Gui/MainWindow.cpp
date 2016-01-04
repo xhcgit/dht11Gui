@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer();
     if(file->open(QFile::ReadOnly))
     {
-        timer->setInterval(3000);
+        timer->setInterval(5000);  //每隔5s读取一次数据
         connect(timer, SIGNAL(timeout()), this, SLOT(slotTimeOut()));
         timer->start();
     }

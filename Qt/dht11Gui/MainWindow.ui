@@ -169,7 +169,7 @@
   </action>
   <action name="actionBeepFreq">
    <property name="text">
-    <string>BeepFreq</string>
+    <string>Beep</string>
    </property>
   </action>
   <action name="actionAverage">
