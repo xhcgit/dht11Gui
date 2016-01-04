@@ -85,6 +85,8 @@ void Change::paintEvent(QPaintEvent *)
 
 	if((this->point.x() >= 30 && this->point.x() <= 470) && (powerFlagH || powerFlagT))
 	{
+        p.setPen(QPen(Qt::DashLine));
+        p.drawLine(point.x(), 30, point.x(), 210);
 		int index = (470 - point.x())/2;
 		Data temp;
 		if(data->size() > index)
